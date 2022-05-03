@@ -38,14 +38,14 @@
             $user = $result->fetch_object();
             // Check if it is the right password for that username
             if (password_verify($password, $user->password)) {
-                $sql = "SELECT id, image, title, mail, name, phone FROM users WHERE id = '$user->id'";
+                $sql = "SELECT id, image, title, mail, name, phone, admin FROM users WHERE id = '$user->id'";
                 $user = $mySQL->Query($sql, false)->fetch_object();
                 $response['authenticated'] = TRUE;
                 $response['user'] = $user;
                 echo json_encode($response);
             } else {
                 $response['authenticated'] = FALSE;
-                $response['error'] = "Wrong password";
+                $response['error'] = "Wrong password " . $password . " " . $user->password;
                 echo json_encode($response);
             }
         } else {
@@ -81,7 +81,7 @@
                                 ('$newUser->mail', '$newUser->name', '$passEncrypt')
                             ";
                     if ($mySQL->Query($sql, false) === TRUE) {
-                        $sql = "SELECT id, image, title, mail, name, phone FROM users WHERE mail = '$mail'";
+                        $sql = "SELECT id, image, title, mail, name, phone, admin FROM users WHERE mail = '$mail'";
                         $user = $mySQL->Query($sql, false)->fetch_object();
                         $response['signupSuccess'] = TRUE;
                         $response['user'] = $user;
