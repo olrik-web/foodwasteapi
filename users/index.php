@@ -10,11 +10,11 @@
 
     if ($request_method === 'GET' && isset($_GET['id'])) {
         $userId = $_GET['id'];
-        $sql = "SELECT id, image, title, mail, name, phone, admin FROM users WHERE id = '$userId'";
+        $sql = "SELECT id, image, title, mail, name, phone, admin, street, zipcode, city FROM users WHERE id = '$userId'";
         echo $mySQL->Query($sql, true);
 
     } else if ($request_method === 'GET') {
-        $sql = "SELECT id, image, title, mail, name, phone, admin FROM users;";
+        $sql = "SELECT id, image, title, mail, name, phone, admin, street, zipcode, city FROM users;";
         echo $mySQL->Query($sql, true);
         
     } else if ($request_method === 'PUT' && isset($_GET['id'])){

@@ -1,90 +1,576 @@
 -- MySQL dump 10.13  Distrib 8.0.29, for macos12 (x86_64)
+
 --
+
 -- Host: 127.0.0.1    Database: post_app_db
+
 -- ------------------------------------------------------
+
 -- Server version	8.0.27
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
+
+;
+
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
+
+;
+
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
+
+;
+
+/*!50503 SET NAMES utf8 */
+
+;
+
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */
+
+;
+
+/*!40103 SET TIME_ZONE='+00:00' */
+
+;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */
+
+;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */
+
+;
+
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */
+
+;
+
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */
+
+;
 
 --
+
 -- Table structure for table `posts`
+
 --
 
 DROP TABLE IF EXISTS `posts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */
+
+;
+
+/*!50503 SET character_set_client = utf8mb4 */
+
+;
+
 CREATE TABLE `posts` (
-  `id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'created at time',
-  `title` varchar(255) DEFAULT NULL COMMENT 'title',
-  `body` varchar(255) DEFAULT NULL COMMENT 'content',
-  `image` longtext COMMENT 'image url',
-  `uid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'user id',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb3 COMMENT='newTable';
-/*!40101 SET character_set_client = @saved_cs_client */;
+	`id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+	`created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'created at time',
+	`title` varchar(255) DEFAULT NULL COMMENT 'title',
+	`body` varchar(255) DEFAULT NULL COMMENT 'content',
+	`image` longtext COMMENT 'image url',
+	`uid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'user id',
+	PRIMARY KEY (`id`)
+) ENGINE = InnoDB AUTO_INCREMENT = 52 DEFAULT CHARSET = utf8mb3 COMMENT = 'newTable';
+
+/*!40101 SET character_set_client = @saved_cs_client */
+
+;
 
 --
+
 -- Dumping data for table `posts`
+
 --
 
 LOCK TABLES `posts` WRITE;
-/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,'2022-04-28 13:49:29','consequuntur deleniti eos quia temporibus ab aliquid at','voluptatem cumque tenetur consequatur expedita ipsum nemo quia explicabo\naut eum minima consequatur\ntempore cumque quae est et\net in consequuntur voluptatem voluptates aut','https://images.unsplash.com/photo-1642013126529-f674c5b87dbe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwxNXx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','1'),(14,'2022-04-28 15:20:39','qui est esse','est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla','https://images.unsplash.com/photo-1642049888276-9c9f0a1a8758?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyfHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400','1'),(15,'2022-04-28 15:20:39','consequuntur deleniti eos quia temporibus ab aliquid at','voluptatem cumque tenetur consequatur expedita ipsum nemo quia explicabo\naut eum minima consequatur\ntempore cumque quae est et\net in consequuntur voluptatem voluptates aut','https://images.unsplash.com/photo-1642013126529-f674c5b87dbe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwxNXx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','2'),(16,'2022-04-28 15:20:39','at nam consequatur ea labore ea harum','cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut','https://images.unsplash.com/photo-1642047538308-29a5ef5df89c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyM3x8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','2'),(17,'2022-04-28 15:20:39','doloremque illum aliquid sunt','deserunt eos nobis asperiores et hic\nest debitis repellat molestiae optio\nnihil ratione ut eos beatae quibusdam distinctio maiores\nearum voluptates et aut adipisci ea maiores voluptas maxime','https://images.unsplash.com/photo-1642003106566-41d49e0930f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwxMHx8fHx8fDJ8fDE2NDIwNzUwMDE&ixlib=rb-1.2.1&q=80&w=400','3'),(18,'2022-04-28 15:20:39','labore in ex et explicabo corporis aut quas','ex quod dolorem ea eum iure qui provident amet\nquia qui facere excepturi et repudiandae\nasperiores molestias provident\nminus incidunt vero fugit rerum sint sunt excepturi provident','https://images.unsplash.com/photo-1642053427171-45b13e6730db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyN3x8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','3'),(19,'2022-04-28 15:20:39','laboriosam dolor voluptates','doloremque ex facilis sit sint culpa\nsoluta assumenda eligendi non ut eius\nsequi ducimus vel quasi\nveritatis est dolores','https://images.unsplash.com/photo-1638913658179-18c9a9c943f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MXwxfGFsbHwyMXx8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','4'),(20,'2022-04-28 15:20:39','temporibus sit alias delectus eligendi possimus magni','quo deleniti praesentium dicta non quod\naut est molestias\nmolestias et officia quis nihil\nitaque dolorem quia','https://images.unsplash.com/photo-1641999432709-50a47da37c2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyMnx8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','5'),(21,'2022-04-28 15:20:39','beatae soluta recusandae','dolorem quibusdam ducimus consequuntur dicta aut quo laboriosam\nvoluptatem quis enim recusandae ut sed sunt\nnostrum est odit totam\nsit error sed sunt eveniet provident qui nulla','https://images.unsplash.com/photo-1642041581307-ddd25bc7a4e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyMHx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','6'),(22,'2022-04-28 15:20:39','et ea vero quia laudantium autem','delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus\naccusamus in eum beatae sit\nvel qui neque voluptates ut commodi qui incidunt\nut animi commodi','https://images.unsplash.com/photo-1642006953663-06f0387f5652?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHw0fHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400','6'),(23,'2022-04-28 15:20:39','voluptas blanditiis repellendus animi ducimus error sapiente et suscipit','enim adipisci aspernatur nemo\nnumquam omnis facere dolorem dolor ex quis temporibus incidunt\nab delectus culpa quo reprehenderit blanditiis asperiores\naccusantium ut quam in voluptatibus voluptas ipsam dicta','https://images.unsplash.com/photo-1641996430982-c1b527946903?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwxNHx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','7'),(24,'2022-04-28 15:20:39','enim unde ratione doloribus quas enim ut sit sapiente','odit qui et et necessitatibus sint veniam\nmollitia amet doloremque molestiae commodi similique magnam et quam\nblanditiis est itaque\nquo et tenetur ratione occaecati molestiae tempora','https://images.unsplash.com/photo-1640622661329-67f406a77d53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MXwxfGFsbHwxNnx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','4'),(25,'2022-04-28 15:20:39','ratione ex tenetur perferendis','aut et excepturi dicta laudantium sint rerum nihil\nlaudantium et at\na neque minima officia et similique libero et\ncommodi voluptate qui','https://images.unsplash.com/photo-1641945511438-942383b1193c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwxOXx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','8'),(26,'2022-04-28 15:20:39','id minus libero illum nam ad officiis','earum voluptatem facere provident blanditiis velit laboriosam\npariatur accusamus odio saepe\ncumque dolor qui a dicta ab doloribus consequatur omnis\ncorporis cupiditate eaque assumenda ad nesciunt','https://images.unsplash.com/photo-1642021805704-cf4f9c43c5e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyNHx8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','8'),(28,'2022-04-28 15:20:39','ea molestias quasi exercitationem repellat qui ipsa sit aut','et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut','https://images.unsplash.com/photo-1642006104371-70d2c87fcc28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwzfHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400','9'),(29,'2022-04-28 15:20:39','asperiores ea ipsam voluptatibus modi minima quia sint','repellat aliquid praesentium dolorem quo\nsed totam minus non itaque\nnihil labore molestiae sunt dolor eveniet hic recusandae veniam\ntempora et tenetur expedita sunt','https://images.unsplash.com/photo-1638913970675-b5ec36292665?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MXwxfGFsbHw2fHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400','2'),(30,'2022-04-28 15:20:39','autem hic labore sunt dolores incidunt','enim et ex nulla\nomnis voluptas quia qui\nvoluptatem consequatur numquam aliquam sunt\ntotam recusandae id dignissimos aut sed asperiores deserunt','https://images.unsplash.com/photo-1642032785710-a812cff7b889?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHw5fHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400','12'),(31,'2022-04-28 15:20:39','maxime id vitae nihil numquam','veritatis unde neque eligendi\nquae quod architecto quo neque vitae\nest illo sit tempora doloremque fugit quod\net et vel beatae sequi ullam sed tenetur perspiciatis','https://images.unsplash.com/photo-1641827963506-7846d2eacb46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHw4fHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400','11'),(32,'2022-04-28 15:20:39','sunt aut facere repellat provident occaecati excepturi optio reprehenderit','quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto','https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MXwxfGFsbHwxfHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400','2'),(33,'2022-04-28 15:20:39','in quibusdam tempore odit est dolorem','itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio','https://images.unsplash.com/photo-1642013352168-ccb46a0ac67f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHw1fHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400','2'),(34,'2022-04-28 15:20:39','pariatur consequatur quia magnam autem omnis non amet','libero accusantium et et facere incidunt sit dolorem\nnon excepturi qui quia sed laudantium\nquisquam molestiae ducimus est\nofficiis esse molestiae iste et quos','https://images.unsplash.com/photo-1640622842924-3ae860f77265?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MXwxfGFsbHwyNnx8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','4'),(35,'2022-04-28 15:20:39','commodi ullam sint et excepturi error explicabo praesentium voluptas','odio fugit voluptatum ducimus earum autem est incidunt voluptatem\nodit reiciendis aliquam sunt sequi nulla dolorem\nnon facere repellendus voluptates quia\nratione harum vitae ut','https://images.unsplash.com/photo-1642036048293-e0e2c3ff7599?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwxMnx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','3'),(36,'2022-04-28 15:20:39','qui qui voluptates illo iste minima','aspernatur expedita soluta quo ab ut similique\nexpedita dolores amet\nsed temporibus distinctio magnam saepe deleniti\nomnis facilis nam ipsum natus sint similique omnis','https://images.unsplash.com/photo-1642051310779-1979f755da5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyNXx8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','11'),(37,'2022-04-28 15:20:39','aut amet sed','libero voluptate eveniet aperiam sed\nsunt placeat suscipit molestias\nsimilique fugit nam natus\nexpedita consequatur consequatur dolores quia eos et placeat','https://images.unsplash.com/photo-1642024728966-7492bae9bb60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwxOHx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','2'),(38,'2022-04-28 15:20:39','beatae enim quia vel','enim aspernatur illo distinctio quae praesentium\nbeatae alias amet delectus qui voluptate distinctio\nodit sint accusantium autem omnis\nquo molestiae omnis ea eveniet optio','https://images.unsplash.com/photo-1642020281358-cb0ea71e1de0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwxM3x8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','2'),(39,'2022-04-28 15:20:39','qui explicabo molestiae dolorem','rerum ut et numquam laborum odit est sit\nid qui sint in\nquasi tenetur tempore aperiam et quaerat qui in\nrerum officiis sequi cumque quod','https://images.unsplash.com/photo-1593642532871-8b12e02d091c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MXwxfGFsbHwxMXx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=80&w=400','3'),(40,'2022-04-28 15:20:39','magnam ut rerum iure','ea velit perferendis earum ut voluptatem voluptate itaque iusto\ntotam pariatur in\nnemo voluptatem voluptatem autem magni tempora minima in\nest distinctio qui assumenda accusamus dignissimos officia nesciunt nobis','https://images.unsplash.com/photo-1642044658495-ef626a9cb2c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyOHx8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','6'),(41,'2022-04-28 15:20:39','magnam facilis autem','dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas','https://images.unsplash.com/photo-1642043248964-0352a2d6a646?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwzMHx8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','10'),(42,'2022-04-28 15:20:39','dolorem eum magni eos aperiam quia','ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae','https://images.unsplash.com/photo-1641991727557-0f9b93f87ead?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyOXx8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=80&w=400','12'),(43,'2022-04-28 15:20:39','dolor sint quo a velit explicabo quia nam','eos qui et ipsum ipsam suscipit aut\nsed omnis non odio\nexpedita earum mollitia molestiae aut atque rem suscipit\nnam impedit esse','https://images.unsplash.com/photo-1642034554560-a344b6f059dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHw3fHx8fHx8Mnx8MTY0MjA3NTAwMQ&ixlib=rb-1.2.1&q=80&w=400','12');
-/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
+
+/*!40000 ALTER TABLE `posts` DISABLE KEYS */
+
+;
+
+INSERT INTO
+	`posts`
+VALUES
+	(
+		1,
+		'2022-04-28 13:49:29',
+		'Lykkepose',
+		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'bakery.jpg',
+		'1'
+	),(
+		14,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'dairy.jpg',
+		'1'
+	),(
+		15,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meals.jpg',
+		'2'
+	),(
+		16,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'vegetables.jpg',
+		'2'
+	),(
+		17,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet kød/fisk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meat.jpg',
+		'3'
+	),(
+		18,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'bakery.jpg',
+		'3'
+	),(
+		19,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'bakery.jpg',
+		'4'
+	),(
+		20,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'vegetables.jpg',
+		'5'
+	),(
+		21,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meals.jpg',
+		'6'
+	),(
+		22,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meals.jpg',
+		'6'
+	),(
+		23,
+		'2022-04-28 15:20:39 ',
+		'Lykkepose',
+		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'vegetables.jpg',
+		'7'
+	),(
+		24,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'bakery.jpg',
+		'4'
+	),(
+		25,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'dairy.jpg',
+		'8'
+	),(
+		26,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'dairy.jpg',
+		'8'
+	),(
+		28,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet kød/fisk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meat.jpg',
+		'9'
+	),(
+		29,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet kød/fisk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meat.jpg',
+		'2'
+	),(
+		30,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meals.jpg',
+		'12'
+	),(
+		31,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meals.jpg',
+		'11'
+	),(
+		32,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meals.jpg',
+		'2'
+	),(
+		33,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'bakery.jpg',
+		'2'
+	),(
+		34,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet kød/fisk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meat.jpg',
+		'4'
+	),(
+		35,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'vegetables.jpg',
+		'3'
+	),(
+		36,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'bakery.jpg',
+		'11'
+	),(
+		37,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'dairy.jpg',
+		'2'
+	),(
+		38,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'vegetables.jpg',
+		'2'
+	),(
+		39,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'dairy.jpg',
+		'3'
+	),(
+		40,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'meals.jpg',
+		'6'
+	),(
+		41,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'vegetables.jpg',
+		'10'
+	),(
+		42,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'bakery.jpg',
+		'12'
+	),(
+		43,
+		'2022-04-28 15:20:39',
+		'Lykkepose',
+		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
+		'dairy.jpg',
+		'12'
+	);
+
+/*!40000 ALTER TABLE `posts` ENABLE KEYS */
+
+;
+
 UNLOCK TABLES;
 
 --
+
 -- Table structure for table `users`
+
 --
 
 DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */
+
+;
+
+/*!50503 SET character_set_client = utf8mb4 */
+
+;
+
 CREATE TABLE `users` (
-  `id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
-  `image` longtext CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT 'user image',
-  `title` varchar(255) DEFAULT NULL COMMENT 'user title',
-  `mail` varchar(255) DEFAULT NULL COMMENT 'user mail',
-  `name` varchar(255) DEFAULT NULL COMMENT 'user name',
-  `phone` varchar(255) DEFAULT NULL COMMENT 'user phone',
-  `password` varchar(60) DEFAULT NULL,
-  `admin` BIT DEFAULT NULL COMMENT 'isAdmin',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3 COMMENT='newTable';
-/*!40101 SET character_set_client = @saved_cs_client */;
+	`id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+	`image` longtext CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT 'user image',
+	`title` varchar(255) DEFAULT NULL COMMENT 'user title',
+	`mail` varchar(255) DEFAULT NULL COMMENT 'user mail',
+	`name` varchar(255) DEFAULT NULL COMMENT 'user name',
+	`phone` varchar(255) DEFAULT NULL COMMENT 'user phone',
+	`password` varchar(60) DEFAULT NULL,
+	`admin` BIT DEFAULT NULL COMMENT 'admin rights',
+	`street` VARCHAR(255) DEFAULT NULL COMMENT 'address street',
+	`zipcode` VARCHAR(255) DEFAULT NULL COMMENT 'address zipcode',
+	`city` VARCHAR(255) DEFAULT NULL COMMENT 'address city',
+	PRIMARY KEY (`id`)
+) ENGINE = InnoDB AUTO_INCREMENT = 25 DEFAULT CHARSET = utf8mb3 COMMENT = 'newTable';
+
+/*!40101 SET character_set_client = @saved_cs_client */
+
+;
 
 --
+
 -- Dumping data for table `users`
+
 --
 
 LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+
+/*!40000 ALTER TABLE `users` DISABLE KEYS */
+
+;
 
 SELECT * FROM users;
 
-INSERT INTO `users` (id, image, title, mail, name, phone, password, admin) VALUES (1, 'https://www.eaaa.dk/media/oayjq02h/martin-n%C3%B8hr.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921658800000&format=webp','Lecturer','mnor@eaaa.dk','Martin Aagaard Nøhr','72286320','$2y$10$ReueGM5yrCARCF8AbK9YBO31oglmErDknh0irI7AtG3kJNGSBnwlm', 0),(2, 'https://www.baaa.dk/media/5buh1xeo/anne-kirketerp.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921531600000&format=webp','Head of Department','anki@eaaa.dk','Anne Kirketerp','72286380',NULL, 0),(3, 'https://www.baaa.dk/media/devlvvgj/rasmus-cederdorff.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921695570000&format=webp','Senior Lecturer','race@eaaa.dk','Rasmus Cederdorff','72286318','$2y$10$ReueGM5yrCARCF8AbK9YBO31oglmErDknh0irI7AtG3kJNGSBnwlm', 0),(4, 'https://www.baaa.dk/media/hi4lv5hw/morten-bonderup.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921669800000&format=webp','Senior Lecturer','moab@eaaa.dk','Morten Algy Bonderup','72286339',NULL, 0),(5,'https://www.eaaa.dk/media/bdojel41/dan-okkels-brendstrup.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921559630000&format=webp','Lecturer','dob@eaaa.dk','Dan Okkels Brendstrup','72286327',NULL, 0),(6,'https://www.baaa.dk/media/3zihz21l/kim-elkjaer-marcher-jepsen.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921620830000&format=webp','Senior Lecturer','kije@eaaa.dk','Kim Elkjær Marcher-Jepsen','7228 6325',NULL, 0),(7,'https://www.eaaa.dk/media/14qpfeq4/line-skj%C3%B8dt.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921638700000&format=webp','Senior Lecturer & Internship Coordinator','lskj@eaaa.dk','Line Skjødt','72286336',NULL, 0),(8,'https://www.baaa.dk/media/uqxhqlzq/anne-storm-rasmussen.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921534400000&format=webp','Rector','anst@eaaa.dk','Anne Storm Rasmussen','72286001',NULL, 0),(9,'https://www.baaa.dk/media/u4gorzsd/birgitte-kirk-iversen2.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921541630000&format=webp','Senior Lecturer','bki@eaaa.dk','Birgitte Kirk Iversen','72286316',NULL, 0),(10,'https://www.eaaa.dk/media/lxzcybme/kasper-topp.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921618200000&format=webp','Lecturer','kato@eaaa.dk','Kasper Fischer Topp','72286328',NULL, 0),(11,'https://www.eaaa.dk/media/opybpteb/jes-arbov.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921604700000&format=webp','Lecturer','jear@eaaa.dk','Jes Arbov','72283264',NULL, 0),(12,'https://www.baaa.dk/media/b5ahrlra/maria-louise-bendixen.jpg?anchor=center&mode=crop&width=800&height=450&rnd=132792921650330000&format=webp','Senior Lecturer','mlbe@eaaa.dk','Maria Louise Bendixen','72286345',NULL, 0),(13,null, null, "admin@admin.dk", "Admin", null, "$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu", 1);
+INSERT INTO
+	`users` (
+		id,
+		image,
+		title,
+		mail,
+		name,
+		phone,
+		password,
+		admin,
+		street,
+		zipcode,
+		city
+	)
+VALUES
+	(
+		1,
+		'img-placeholder.jpg',
+		NULL,
+		'aarhusc@circlek.dk',
+		'Circle K - Aarhus C',
+		'86130777',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		'Silkeborgvej 4',
+		'8000',
+		'Aarhus C'
+	),(
+		2,
+		'img-placeholder.jpg',
+		NULL,
+		'aarhusn@circlek.dk',
+		'Circle K - Aarhus N',
+		'86168336',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		'Skovvangsvej 211',
+		'8200',
+		'Aarhus N'
+	),(
+		3,
+		'img-placeholder.jpg',
+		'Senior Lecturer',
+		'brabrand@circlek.dk',
+		'Circle K - Brabrand',
+		'86253388',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		'Silkeborgvej 573',
+		'8220',
+		'Brabrand'
+	),(
+		4,
+		'img-placeholder.jpg',
+		NULL,
+		'q8aarhusn@q8.dk',
+		'Q8 - Randersvej',
+		'86165516',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		'Randersvej 162',
+		'8200',
+		'Aarhus N'
+	),(
+		5,
+		'img-placeholder.jpg',
+		NULL,
+		'aldiaarhusc@aldi.dk',
+		'Aldi - Grønnegade',
+		'70707417',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		'Grønnegade 57',
+		'8000',
+		'Aarhus C'
+	),(
+		6,
+		'img-placeholder.jpg',
+		NULL,
+		'føtexguldsmedgade@føtex.dk',
+		'føtex Food - Guldsmedgade',
+		'89417000',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		'Guldsmedgade 3',
+		'8000',
+		'Aarhus C'
+	),(
+		7,
+		'img-placeholder.jpg',
+		NULL,
+		'lagkagehusetmagasin@lagkagehuset.dk',
+		'Lagkagehuset - Magasin',
+		'70705023',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		'Immervad 2',
+		'8000',
+		'Aarhus C'
+	),(
+		8,
+		'img-placeholder.jpg',
+		NULL,
+		'starbucksborgporten@starbucks.dk',
+		'Starbucks - Borgporten',
+		'20485537',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		"Store Torv 18 Borgporten",
+		"8000",
+		"Aarhus C"
+	),(
+		9,
+		'img-placeholder.jpg',
+		NULL,
+		'espressofrederiksgade@espressohouse.dk',
+		'Espresso House - Frederiksgade',
+		'51636959',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		"Frederiksgade 5",
+		"8000",
+		"Aarhus C"
+	),(
+		10,
+		'img-placeholder.jpg',
+		NULL,
+		'7elevennørreport@7eleven.dk',
+		'7-Eleven - Nørreport',
+		'86199677',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		"Nørreport 28",
+		"8000",
+		"Aarhus C"
+	),(
+		11,
+		'img-placeholder.jpg',
+		NULL,
+		'sushimaniabruuns@sushimania.dk',
+		'SushiMania - Bruuns Galleri',
+		'53725008',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		"M. P. Bruuns Gade 25",
+		"8000",
+		"Aarhus C"
+	),(
+		12,
+		'img-placeholder.jpg',
+		NULL,
+		'flammenaarhus@flammen.dk',
+		'Restaurant Flammen - Aarhus',
+		'35266364',
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		"Toldbodgade 6",
+		"8000",
+		"Aarhus C"
+	),(
+		13,
+		"img-placeholder.jpg",
+		null,
+		"admin@admin.dk",
+		"Admin",
+		null,
+		'$2y$10$a2hYiZyslZVEjhCn5WUl2./DkvJxureeR64pepdLKADq4JCdM1bzu',
+		1,
+		NULL,
+		NULL,
+		NULL
+	);
 
 -- UPDATE users SET `admin` = 1 WHERE id = 15;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */
+
+;
+
+UNLOCK TABLES;
+
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */
+
+;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */
+
+;
+
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */
+
+;
+
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */
+
+;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
+
+;
+
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
+
+;
+
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
+
+;
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */
+
+;
 
 -- Dump completed on 2022-05-03  9:24:31
