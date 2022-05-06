@@ -70,6 +70,7 @@ CREATE TABLE `posts` (
 	`title` varchar(255) DEFAULT NULL COMMENT 'title',
 	`body` varchar(255) DEFAULT NULL COMMENT 'content',
 	`image` longtext COMMENT 'image url',
+	`category` VARCHAR(255) DEFAULT NULL COMMENT 'category', 
 	`uid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'user id',
 	PRIMARY KEY (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 52 DEFAULT CHARSET = utf8mb3 COMMENT = 'newTable';
@@ -99,6 +100,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'bakery.jpg',
+		'bakery',
 		'1'
 	),(
 		14,
@@ -106,6 +108,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'dairy.jpg',
+		'dairy',
 		'1'
 	),(
 		15,
@@ -113,6 +116,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meals.jpg',
+		'meals',
 		'2'
 	),(
 		16,
@@ -120,6 +124,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'vegetables.jpg',
+		'vegetables',
 		'2'
 	),(
 		17,
@@ -127,6 +132,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet kød/fisk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meat.jpg',
+		'meat',
 		'3'
 	),(
 		18,
@@ -134,6 +140,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'bakery.jpg',
+		'bakery',
 		'3'
 	),(
 		19,
@@ -141,6 +148,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'bakery.jpg',
+		'bakery',
 		'4'
 	),(
 		20,
@@ -148,6 +156,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'vegetables.jpg',
+		'vegetables',
 		'5'
 	),(
 		21,
@@ -155,6 +164,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meals.jpg',
+		'meals',
 		'6'
 	),(
 		22,
@@ -162,6 +172,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meals.jpg',
+		'meals',
 		'6'
 	),(
 		23,
@@ -169,6 +180,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'vegetables.jpg',
+		'vegetables',
 		'7'
 	),(
 		24,
@@ -176,6 +188,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'bakery.jpg',
+		'bakery',
 		'4'
 	),(
 		25,
@@ -183,6 +196,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'dairy.jpg',
+		'dairy',
 		'8'
 	),(
 		26,
@@ -190,6 +204,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'dairy.jpg',
+		'dairy',
 		'8'
 	),(
 		28,
@@ -197,6 +212,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet kød/fisk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meat.jpg',
+		'meat',
 		'9'
 	),(
 		29,
@@ -204,6 +220,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet kød/fisk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meat.jpg',
+		'meat',
 		'2'
 	),(
 		30,
@@ -211,6 +228,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meals.jpg',
+		'meals',
 		'12'
 	),(
 		31,
@@ -218,6 +236,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meals.jpg',
+		'meals',
 		'11'
 	),(
 		32,
@@ -225,6 +244,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meals.jpg',
+		'meals',
 		'2'
 	),(
 		33,
@@ -232,6 +252,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'bakery.jpg',
+		'bakery',
 		'2'
 	),(
 		34,
@@ -239,6 +260,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet kød/fisk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meat.jpg',
+		'meat',
 		'4'
 	),(
 		35,
@@ -246,6 +268,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'vegetables.jpg',
+		'vegetables',
 		'3'
 	),(
 		36,
@@ -253,6 +276,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'bakery.jpg',
+		'bakery',
 		'11'
 	),(
 		37,
@@ -260,6 +284,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'dairy.jpg',
+		'dairy',
 		'2'
 	),(
 		38,
@@ -267,6 +292,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'vegetables.jpg',
+		'vegetables',
 		'2'
 	),(
 		39,
@@ -274,6 +300,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'dairy.jpg',
+		'dairy',
 		'3'
 	),(
 		40,
@@ -281,6 +308,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet mad fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'meals.jpg',
+		'meals',
 		'6'
 	),(
 		41,
@@ -288,6 +316,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede grøntsager fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'vegetables.jpg',
+		'vegetables',
 		'10'
 	),(
 		42,
@@ -295,6 +324,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandet bagværk fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'bakery.jpg',
+		'bakery',
 		'12'
 	),(
 		43,
@@ -302,6 +332,7 @@ VALUES
 		'Lykkepose',
 		'Red en lykkepose med blandede mælkeprodukter fra dagen. Husk at posens indhold vil variere dag for dag, så lad indholdet overraske dig.',
 		'dairy.jpg',
+		'dairy',
 		'12'
 	);
 
