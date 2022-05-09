@@ -63,14 +63,13 @@ DROP TABLE IF EXISTS `posts`;
 /*!50503 SET character_set_client = utf8mb4 */
 
 ;
-
-CREATE TABLE `posts` (
+ CREATE TABLE `posts` (
 	`id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
 	`created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'created at time',
 	`title` varchar(255) DEFAULT NULL COMMENT 'title',
 	`body` varchar(255) DEFAULT NULL COMMENT 'content',
 	`image` longtext COMMENT 'image url',
-	`category` VARCHAR(255) DEFAULT NULL COMMENT 'category', 
+	`category` VARCHAR(255) DEFAULT NULL COMMENT 'category',
 	`uid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'user id',
 	PRIMARY KEY (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 52 DEFAULT CHARSET = utf8mb3 COMMENT = 'newTable';
@@ -567,6 +566,18 @@ VALUES
 -- UPDATE users SET `admin` = 1 WHERE id = 15;
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */
+
+
+CREATE TABLE `favorites` (
+	`id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+	`postid` int NOT NULL COMMENT 'Primary Key',
+	`uid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'user id',
+	PRIMARY KEY (`id`)
+);
+
+
+INSERT INTO `favorites`(postid, uid) VALUES (14, 13);
+
 
 ;
 

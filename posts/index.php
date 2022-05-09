@@ -18,10 +18,10 @@ if ($request_method === 'GET' && isset($_GET['id'])) {
 } else if ($request_method === 'POST') {
     $newPost = json_decode(file_get_contents('php://input'));
 
-    // error_log($newPost->image);
+    // error_log($newPost->image); // data:image/jpeg;base64 ... ... ...
     // $target_dir = "../../frontend/src/assets/img";
-    // $target_file = $target_dir . $newPost->title;
-    // move_uploaded_file($newPost->image, $target_file);
+    // $target_file = $target_dir . $newPost->title; // TODO: gør navnet mere unikt
+    // $result = move_uploaded_file($newPost->image, $target_file);
 
     $sql = "INSERT INTO posts
                     (title, body, image, uid)
