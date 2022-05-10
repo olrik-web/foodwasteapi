@@ -18,15 +18,21 @@ if ($request_method === 'GET' && isset($_GET['id'])) {
 } else if ($request_method === 'POST') {
     $newPost = json_decode(file_get_contents('php://input'));
 
-    // error_log($newPost->image); // data:image/jpeg;base64 ... ... ...
-    // $target_dir = "../../frontend/src/assets/img";
-    // $target_file = $target_dir . $newPost->title; // TODO: gør navnet mere unikt
-    // $result = move_uploaded_file($newPost->image, $target_file);
+    $base64data = explode(",", $newPost->image);
+    $imageData = base64_decode($base64data[1]);
+    $source = imagecreatefromstring($imageData);
+
+    $savePath = $_SERVER["DOCUMENT_ROOT"] . "/../frontend/src/assets/img/";
+    $fileName = date("Ymd_His_") . $newPost->title . ".jpg";
+    error_log("Save path: " . $savePath );
+    $imageSave = imagejpeg($source, $savePath . $fileName);
+    error_log("Image save: ". $imageSave);
+    imagedestroy($source);
 
     $sql = "INSERT INTO posts
                     (title, body, image, uid)
                 VALUES
-                    ('$newPost->title', '$newPost->body', '$newPost->image', '$newPost->uid')
+                    ('$newPost->title', '$newPost->body', '$fileName', '$newPost->uid')
                 ";
     echo $mySQL->Query($sql, false);
 } else if ($request_method === 'DELETE' && isset($_GET['id'])) {
