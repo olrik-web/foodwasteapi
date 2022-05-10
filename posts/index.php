@@ -18,15 +18,13 @@ if ($request_method === 'GET' && isset($_GET['id'])) {
 } else if ($request_method === 'POST') {
     $newPost = json_decode(file_get_contents('php://input'));
 
+    // File upload
     $base64data = explode(",", $newPost->image);
     $imageData = base64_decode($base64data[1]);
     $source = imagecreatefromstring($imageData);
-
     $savePath = $_SERVER["DOCUMENT_ROOT"] . "/../frontend/src/assets/img/";
     $fileName = date("Ymd_His_") . $newPost->title . ".jpg";
-    error_log("Save path: " . $savePath );
     $imageSave = imagejpeg($source, $savePath . $fileName);
-    error_log("Image save: ". $imageSave);
     imagedestroy($source);
 
     $sql = "INSERT INTO posts
